@@ -1,2 +1,2 @@
 # walkman2unicode
-Walkman Chanakya to Unicode converter
+Walkman Chanakya to Unicode Converter
