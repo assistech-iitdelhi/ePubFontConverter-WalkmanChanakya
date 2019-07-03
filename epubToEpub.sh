@@ -1,6 +1,6 @@
 #!/bin/bash
-SAVEIFS=$IFS
-IFS=$(echo -en "\n\b")
+#SAVEIFS=$IFS
+#IFS=$(echo -en "\n\b")
 # non-unicode to unicode conversion 
 # of NCERT ePathShala epub file to unicode epub file
 # capturing the entire formatting
@@ -23,14 +23,13 @@ then
 	exit 0
 fi
 
-# sudo chmod -R 777 $1
-chap=$(find -name "*.html" -or -name "*.xhtml")
+chap=$(find $1 -name '*.html' -o -name '*.xhtml') 
+echo $chap
 for ch in $chap
 do
-	echo '==================='
 	echo $ch
 	touch temp.txt
-	python translateEpubRawFile.py $ch $2 > temp.txt
+	python translateEpubRawFile.py $ch > temp.txt
 	cp temp.txt $ch
 	rm temp.txt
 done
@@ -40,7 +39,4 @@ cd $1
 zip -r $1n.epub *
 cp $1n.epub ../epubout/$1.epub
 cd ..
-# chmod 777 $1out.epub
 rm -rf $1
-
-IFS=$SAVEIFS
