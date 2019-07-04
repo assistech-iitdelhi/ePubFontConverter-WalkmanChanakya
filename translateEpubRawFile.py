@@ -5,7 +5,7 @@ import pdb
 import requests
 
 def api(text, font):
-    url = "http://localhost:8080/api/text/" + font
+    url = "http://assistech.iitd.ac.in/ravi/api/text/" + font
     r = requests.post(url, data=text.encode('utf-8'))
     r.encoding = 'utf-8'
     return r.status_code, r.text
