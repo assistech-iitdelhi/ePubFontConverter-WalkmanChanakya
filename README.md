@@ -2,4 +2,4 @@
 
 Walkman Chanakya to Unicode Converter
 
-## sh epubToEpub.sh <filename-without-extension>
+## sh epubToEpub.sh <epub-filename>
